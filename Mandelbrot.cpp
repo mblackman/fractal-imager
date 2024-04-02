@@ -11,8 +11,13 @@ int Mandelbrot::getIterations(double x, double y) {
     complex<double> c(x, y);
     int iteration = 0;
 
-    while (abs(z) <= 2 && iteration < MAX_ITERATIONS) {
+    while (iteration < MAX_ITERATIONS) {
         z = z*z + c;
+
+        if (abs(z) > 2) {
+            break;
+        }
+
         iteration++;
     }
 
