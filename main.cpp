@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdint>
 #include "Bitmap.h"
 #include "Mandelbrot.h"
 
@@ -28,8 +29,8 @@ int main() {
             }
 
             int iterations = Mandelbrot::getIterations(xFractal, yFractal);
-            uint8_t val = (iterations / (double)Mandelbrot::MAX_ITERATIONS) * 255;
-            bitmap.setPixel(x, y, val, val, val);
+            uint8_t val = (uint8_t)((iterations / (double)Mandelbrot::MAX_ITERATIONS) * 256);
+            bitmap.setPixel(x, y, 0, val, 0);
         }
     }
 
