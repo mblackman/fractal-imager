@@ -14,6 +14,7 @@ int main() {
     Bitmap bitmap{WIDTH, HEIGHT};
 
     unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0});
+    unique_ptr<int[]> fractal(new int[WIDTH*HEIGHT]{0});
 
     for (int y=0; y<HEIGHT; y++) {
         for (int x=0; x<WIDTH; x++) {
@@ -21,7 +22,8 @@ int main() {
             double yFractal = (y - HEIGHT / 2) * 2.0 / HEIGHT;
 
             int iterations = Mandelbrot::getIterations(xFractal, yFractal);
-            
+            fractal[y * WIDTH + x] = iterations;
+
             if (iterations != Mandelbrot::MAX_ITERATIONS) {
                 histogram[iterations]++;
             }
@@ -35,14 +37,6 @@ int main() {
     }
 
     bitmap.write("test.bmp");
-
-    int count = 0;
-    for (int i=0; i<=Mandelbrot::MAX_ITERATIONS; i++) {
-        cout << histogram[i] << " " << flush;
-        count += histogram[i];
-    }
-
-    cout << endl << count << "; " << WIDTH*HEIGHT << endl;
 
     return 0;
 }
