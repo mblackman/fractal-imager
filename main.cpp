@@ -1,9 +1,13 @@
 #include <iostream>
-#include "BitmapFileHeader.h"
-#include "BitmapInfoHeader.h"
+#include "Bitmap.h"
+
 using namespace std;
+using namespace fractal;
 
 int main() {
-    cout << "Hello World" << endl;
+    Bitmap bitmap{400, 400};
+
+    bitmap.write("test.bin");
+    
     return 0;
 }
