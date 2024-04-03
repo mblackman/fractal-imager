@@ -5,11 +5,11 @@ using namespace std;
 using namespace fractal;
 
 int main() {
-    FractalCreator fractalCreator(800, 600);
 
     int const WIDTH = 800;
     int const HEIGHT = 600;
 
+    FractalCreator fractalCreator(WIDTH, HEIGHT);
 
     fractalCreator.addZoom(Zoom(WIDTH/2, HEIGHT/2, 4.0/WIDTH));
     fractalCreator.addZoom(Zoom(295, HEIGHT - 202, 0.1));
