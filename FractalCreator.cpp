@@ -1,5 +1,6 @@
 #include <math.h>
 #include <tuple>
+#include <cassert>
 
 #include "Zoom.h"
 #include "Mandelbrot.h"

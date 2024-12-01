@@ -33,3 +33,5 @@
 
 # Build directory
 /out
+fractal-imager
+test.bmp

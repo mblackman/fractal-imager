@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 #include "Zoom.h"
 #include "Mandelbrot.h"
 #include "ZoomList.h"
